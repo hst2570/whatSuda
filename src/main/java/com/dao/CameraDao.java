@@ -7,44 +7,35 @@ import java.sql.SQLException;
 
 import javax.sql.DataSource;
 
-import com.domain.User;
+import com.domain.Camera;
 
-public class UserDao {
+public class CameraDao {
 	private DataSource dataSource;
 
 	public void setDataSource(DataSource dataSource){ 
 		this.dataSource = dataSource;
 	}
 
-	public User getUserInfo(String id) throws ClassNotFoundException, SQLException {
-		
+	public Camera get(int id) throws ClassNotFoundException, SQLException {
+			
 		Connection connection = dataSource.getConnection();
 		
-		PreparedStatement preparedStatement = connection.prepareStatement("select * from user where id = ?");
-        preparedStatement.setString(1, id);
+		PreparedStatement preparedStatement = connection.prepareStatement("select * from camera where beaconid = ?");
+        preparedStatement.setInt(1, id);
         
         ResultSet resultSet = preparedStatement.executeQuery();
         resultSet.next();
         
-        User user = new User();
+        Camera camera = new Camera();
         
-        user.setId(resultSet.getString("id"));
+        camera.setDomain(resultSet.getString("domain"));
+        camera.setBeaconid(resultSet.getInt("beaconid"));
+        camera.setCameraid(resultSet.getInt("cameraid"));
         
         resultSet.close();
         preparedStatement.close();
         connection.close();
         
-		return user;
+		return camera;
 	}
-
-	public String add(User user) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	public void update(User user) {
-		// TODO Auto-generated method stub
-		
-	}
-
 }

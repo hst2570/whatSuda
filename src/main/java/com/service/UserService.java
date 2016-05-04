@@ -5,7 +5,7 @@ import org.springframework.ui.Model;
 import com.dao.UserDao;
 import com.domain.User;
 
-public interface AppService {
+public interface UserService {
 	/*	앱 <->서버 서비스
 	 * 1. 유저정보 나열 >> findAll
 	 * 2. 최단경로 나열
@@ -13,9 +13,9 @@ public interface AppService {
 	 * 4. 사진 촬영 이벤트
 	 */
 	
-	public String userInfo(Long userNum);
+	public User userInfo(String userNum);
 	
-	public String catchUser(Long userNum, Long locate);
+//	public void photoEvent(String beaconNum);
 	
 	public String signUp(User user);
 

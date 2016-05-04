@@ -1,28 +1,34 @@
 package com.domain;
 
-public class Photo {
+public class Location{
 
     private String userId;
-	private String path;
-	private String date;
-	
+    private String beaconid;
+    private String date;
+
 	public String getUserId() {
 		return userId;
 	}
+
 	public void setUserId(String userId) {
 		this.userId = userId;
 	}
-	public String getPath() {
-		return path;
+
+	public String getBeaconid() {
+		return beaconid;
 	}
-	public void setPath(String path) {
-		this.path = path;
+
+	public void setBeaconid(String beaconid) {
+		this.beaconid = beaconid;
 	}
+
 	public String getDate() {
 		return date;
 	}
+
 	public void setDate(String date) {
 		this.date = date;
 	}
-
+	
+	
 }
