@@ -24,6 +24,7 @@ public class UserServiceImpl implements UserService {
 	public User userInfo(String userNum){
 		
 		try {
+			System.out.println("userService id : ----------------------------------------"+userNum+"--------------------------------------");
 			return userDao.getUserInfo(userNum);
 		} catch (ClassNotFoundException e) {
 			e.printStackTrace();

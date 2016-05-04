@@ -3,21 +3,17 @@
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xmlns:context="http://www.springframework.org/schema/context"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd" >
-	<!-- 
-    <bean id = "userDao" class = "kr.ac.jejunu.userdao.UserDao">
-        <property name="connectionMaker" ref="connectionMaker" />
-    </bean>
-
-    <bean id="connectionMaker" class="kr.ac.jejunu.userdao.SimpleConnectionMaker"/>
-    -->
+	
     <bean id="cameraService" class="com.service.CameraServiceImpl">
         <property name="cameraDao" ref="cameraDao" />
     </bean>
-    
     <bean id="cameraDao" class="com.dao.CameraDao">
         <property name="dataSource" ref="dataSource" />
     </bean>
     
+    <bean id="userService" class="com.service.UserServiceImpl">
+        <property name="userDao" ref="userDao" />
+    </bean>
 	<bean id="userDao" class="com.dao.UserDao">
         <property name="dataSource" ref="dataSource" />
     </bean>

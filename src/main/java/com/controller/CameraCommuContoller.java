@@ -20,7 +20,7 @@ public class CameraCommuContoller {
     public void setup(){
         ApplicationContext applicationContext
                 = new GenericXmlApplicationContext("daoFactory.xml");
-        cameraService = (CameraService) applicationContext.getBean("cameraDao");
+        cameraService = (CameraService) applicationContext.getBean("cameraService");
     }
 	
 	@RequestMapping("/camera/start/{userid}/{beaconid}")

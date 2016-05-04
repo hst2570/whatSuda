@@ -17,7 +17,7 @@ public class UserDao {
 	}
 
 	public User getUserInfo(String id) throws ClassNotFoundException, SQLException {
-		
+		System.out.println("userDao id : ----------------------------------------"+id+"--------------------------------------");
 		Connection connection = dataSource.getConnection();
 		
 		PreparedStatement preparedStatement = connection.prepareStatement("select * from user where id = ?");
