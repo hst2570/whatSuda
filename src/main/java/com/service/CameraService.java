@@ -6,6 +6,6 @@ public interface CameraService {
 	 * 2. 사진이 찍힌후, 카메라에서 오는 유저아이디와 경로 저장
 	 */
 	
-	public String startCamera(Long userId, int beaconid);
+	public void startCamera(Long userId, int beaconid);
 	public void savePhoto(Long userId, String photoPath);
 }

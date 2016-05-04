@@ -1,5 +1,9 @@
 package com.service;
 
+import java.io.DataOutputStream;
+import java.net.HttpURLConnection;
+import java.net.URL;
+import java.net.URLConnection;
 import java.sql.SQLException;
 
 import com.dao.CameraDao;
@@ -13,10 +17,36 @@ public class CameraServiceImpl implements CameraService {
 	}
 	
 	@Override
-	public String startCamera(Long userId, int beaconid) {
+	public void startCamera(Long userId, int beaconid) {
 		try {
 			Camera camera = cameraDao.get(beaconid);
-			return camera.getDomain();
+						
+			String encoded = null;
+	        DataOutputStream  out = null;
+	        try{
+	            URL url = new URL(camera.getDomain()+"?userid="+userId);
+	            URLConnection conn = url.openConnection();
+	            HttpURLConnection hurlc = (HttpURLConnection) conn;
+	            // 헤더값을 설정한다.
+//	            hurlc.setRequestProperty(키, 값);
+//	            hurlc.setRequestMethod("get");
+	            hurlc.setDoOutput(true);
+	            hurlc.setDoInput(true);
+	            hurlc.setUseCaches(false);
+	            hurlc.setDefaultUseCaches(false);
+//	            encoded = ;
+	            out = new DataOutputStream(conn.getOutputStream());
+//	            out.writeBytes(encoded);
+	            out.flush();
+	            
+	        }catch(Exception e){
+	            e.printStackTrace();
+	        }finally{
+	            try{
+	                out.close();
+	            }catch(Exception e){}
+	        }
+	        
 		} catch (ClassNotFoundException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -24,14 +54,16 @@ public class CameraServiceImpl implements CameraService {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		return null;
-		
 	}
 
 	@Override
 	public void savePhoto(Long userId, String photoPath) {
 		// TODO Auto-generated method stub
 		
+	}
+	
+	public void setCameraDomain(String domain, int cameraId, int beaconId) throws SQLException{
+		cameraDao.setCamera(domain, cameraId, beaconId);
 	}
 
 }

@@ -38,4 +38,27 @@ public class CameraDao {
         
 		return camera;
 	}
+
+	public void setCamera(String domain, int cameraId, int beaconId) throws SQLException {
+		Connection connection = dataSource.getConnection();
+		
+		PreparedStatement preparedStatement = connection.prepareStatement("insert into camera(domain, cameraid, beaconid) values"
+				+ "?, ?, ?");
+        preparedStatement.setString(1, domain);
+        preparedStatement.setInt(1, cameraId);
+        preparedStatement.setInt(1, beaconId);
+        
+        ResultSet resultSet = preparedStatement.executeQuery();
+        resultSet.next();
+        
+        Camera camera = new Camera();
+        
+        camera.setDomain(resultSet.getString("domain"));
+        camera.setBeaconid(resultSet.getInt("beaconid"));
+        camera.setCameraid(resultSet.getInt("cameraid"));
+        
+        resultSet.close();
+        preparedStatement.close();
+        connection.close();
+	}
 }
