@@ -2,15 +2,24 @@ package com.service;
 
 import java.sql.SQLException;
 
+import org.junit.Before;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.GenericXmlApplicationContext;
 import org.springframework.ui.Model;
 
 import com.dao.UserDao;
 import com.domain.User;
 
 public class UserServiceImpl implements UserService {
-	
-	UserDao userDao;
+	private UserDao userDao;
 
+	@Before
+    public void setup(){
+        ApplicationContext applicationContext
+                = new GenericXmlApplicationContext("daoFactory.xml");
+        userDao = (UserDao) applicationContext.getBean("userDao");
+    }
+	
 	@Override
 	public User userInfo(String userNum){
 		

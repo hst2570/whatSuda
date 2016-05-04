@@ -6,13 +6,11 @@ import java.sql.SQLException;
 
 import org.junit.Before;
 import org.junit.Test;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.GenericXmlApplicationContext;
 
 import com.dao.UserDao;
 import com.domain.User;
-import com.repository.UserRepository;
 
 public class UserDaoTest {
 	

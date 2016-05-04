@@ -26,12 +26,12 @@ public class CameraDaoTest {
         cameraDao = (CameraDao) applicationContext.getBean("cameraDao");
     }
 	
-//    @Test
-//    public void get() throws SQLException, ClassNotFoundException {
-//    	int id = 1;
-//        Camera camera = cameraDao.get(id);
-//        assertEquals(id, camera.getBeaconid());
-//    }
+    @Test
+    public void get() throws SQLException, ClassNotFoundException {
+    	int id = 1;
+        Camera camera = cameraDao.get(id);
+        assertEquals(id, camera.getBeaconid());
+    }
     
     @Test
     public void connecCamera() throws SQLException, ClassNotFoundException {

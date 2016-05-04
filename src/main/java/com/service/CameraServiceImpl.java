@@ -6,6 +6,10 @@ import java.net.URL;
 import java.net.URLConnection;
 import java.sql.SQLException;
 
+import org.junit.Before;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.GenericXmlApplicationContext;
+
 import com.dao.CameraDao;
 import com.domain.Camera;
 
@@ -17,14 +21,14 @@ public class CameraServiceImpl implements CameraService {
 	}
 	
 	@Override
-	public void startCamera(Long userId, int beaconid) {
+	public void startCamera(int userid, int beaconid) {
 		try {
 			Camera camera = cameraDao.get(beaconid);
 						
 			String encoded = null;
 	        DataOutputStream  out = null;
 	        try{
-	            URL url = new URL(camera.getDomain()+"?userid="+userId);
+	            URL url = new URL(camera.getDomain()+"?userid="+userid);
 	            URLConnection conn = url.openConnection();
 	            HttpURLConnection hurlc = (HttpURLConnection) conn;
 	            // 헤더값을 설정한다.
@@ -62,6 +66,7 @@ public class CameraServiceImpl implements CameraService {
 		
 	}
 	
+	//임시 도메인 셋팅메소드
 	public void setCameraDomain(String domain, int cameraId, int beaconId) throws SQLException{
 		cameraDao.setCamera(domain, cameraId, beaconId);
 	}
