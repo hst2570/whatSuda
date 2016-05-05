@@ -9,7 +9,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import com.dao.CameraDao;
+import com.domain.Camera;
 import com.service.CameraService;
 
 @Controller
@@ -29,8 +29,8 @@ public class CameraCommuContoller {
     }
 	
 	@RequestMapping("/camera/set/{domain}/{cameraid}/{beaconid}")
-	public void setCamera(@PathVariable String domain, @PathVariable int cameraid, @PathVariable int beaconid) throws SQLException{
-		cameraService.setCameraDomain(domain, cameraid, beaconid);
+	public Camera setCamera(@PathVariable String domain, @PathVariable int cameraid, @PathVariable int beaconid) throws SQLException{
+		return cameraService.setCameraDomain(domain, cameraid, beaconid);
 	}
 	
 	public void savePhoto(){

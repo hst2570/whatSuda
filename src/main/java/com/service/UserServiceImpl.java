@@ -12,13 +12,10 @@ import com.domain.User;
 
 public class UserServiceImpl implements UserService {
 	private UserDao userDao;
-
-	@Before
-    public void setup(){
-        ApplicationContext applicationContext
-                = new GenericXmlApplicationContext("daoFactory.xml");
-        userDao = (UserDao) applicationContext.getBean("userDao");
-    }
+	
+	public void setUserDao(UserDao userDao){
+		this.userDao = userDao;
+	}
 	
 	@Override
 	public User userInfo(String userNum){

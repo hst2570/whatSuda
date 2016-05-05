@@ -67,8 +67,10 @@ public class CameraServiceImpl implements CameraService {
 	}
 	
 	//임시 도메인 셋팅메소드
-	public void setCameraDomain(String domain, int cameraId, int beaconId) throws SQLException{
-		cameraDao.setCamera(domain, cameraId, beaconId);
+	public Camera setCameraDomain(String domain, int cameraId, int beaconId) throws SQLException{
+		Camera camera = cameraDao.setCamera(domain, cameraId, beaconId);
+		
+		return camera;
 	}
 
 }

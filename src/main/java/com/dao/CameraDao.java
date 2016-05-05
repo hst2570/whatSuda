@@ -39,7 +39,7 @@ public class CameraDao {
 		return camera;
 	}
 
-	public void setCamera(String domain, int cameraId, int beaconId) throws SQLException {
+	public Camera setCamera(String domain, int cameraId, int beaconId) throws SQLException {
 		Connection connection = dataSource.getConnection();
 		
 		PreparedStatement preparedStatement = connection.prepareStatement("insert into camera(domain, cameraid, beaconid) values"
@@ -60,5 +60,7 @@ public class CameraDao {
         resultSet.close();
         preparedStatement.close();
         connection.close();
+        
+        return camera;
 	}
 }
