@@ -1,5 +1,7 @@
 package com.service;
 
+import java.sql.SQLException;
+
 import org.springframework.ui.Model;
 
 import com.dao.UserDao;
@@ -13,7 +15,7 @@ public interface UserService {
 	 * 4. 사진 촬영 이벤트
 	 */
 	
-	public User userInfo(String userNum);
+	public User userInfo(String userNum) throws ClassNotFoundException, SQLException;
 	
 //	public void photoEvent(String beaconNum);
 	

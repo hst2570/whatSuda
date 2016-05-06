@@ -2,14 +2,13 @@ package com.service;
 
 import java.sql.SQLException;
 
-import org.junit.Before;
-import org.springframework.context.ApplicationContext;
-import org.springframework.context.support.GenericXmlApplicationContext;
-import org.springframework.ui.Model;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import com.dao.UserDao;
 import com.domain.User;
 
+@Service
 public class UserServiceImpl implements UserService {
 	private UserDao userDao;
 	
@@ -18,17 +17,9 @@ public class UserServiceImpl implements UserService {
 	}
 	
 	@Override
-	public User userInfo(String userNum){
-		System.out.println("userService id : ----------------------------------------"+userNum+"--------------------------------------");
-		try {
-			return userDao.getUserInfo(userNum);
-		} catch (ClassNotFoundException e) {
-			e.printStackTrace();
-		} catch (SQLException e) {
-			e.printStackTrace();
-		}
-		return null;
-		
+	public User userInfo(String id) throws SQLException{
+		User user = userDao.getUserInfo(id); 
+		return user;
 	}
 	
 	@Override
