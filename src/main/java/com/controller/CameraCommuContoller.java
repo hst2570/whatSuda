@@ -3,8 +3,8 @@ package com.controller;
 import java.sql.SQLException;
 
 import org.junit.Before;
-import org.springframework.context.ApplicationContext;
-import org.springframework.context.support.GenericXmlApplicationContext;
+import org.springframework.context.support.AbstractApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -18,8 +18,8 @@ public class CameraCommuContoller {
 	
 	@Before
     public void setup(){
-        ApplicationContext applicationContext
-                = new GenericXmlApplicationContext("daoFactory.xml");
+		AbstractApplicationContext  applicationContext
+                = new ClassPathXmlApplicationContext("daoFactory.xml");
         cameraService = (CameraService) applicationContext.getBean("cameraService");
     }
 	

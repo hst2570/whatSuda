@@ -16,12 +16,13 @@ public class UserDao {
 		this.dataSource = dataSource;
 	}
 
-	public User getUserInfo(String id) throws ClassNotFoundException, SQLException {
+	public User getUserInfo(String ids) throws ClassNotFoundException, SQLException {
+		int id = Integer.parseInt(ids);
 		System.out.println("userDao id : ----------------------------------------"+id+"--------------------------------------");
 		Connection connection = dataSource.getConnection();
 		
 		PreparedStatement preparedStatement = connection.prepareStatement("select * from user where id = ?");
-        preparedStatement.setString(1, id);
+        preparedStatement.setInt(1, id);
         
         ResultSet resultSet = preparedStatement.executeQuery();
         resultSet.next();

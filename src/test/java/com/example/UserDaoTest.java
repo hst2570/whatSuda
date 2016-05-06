@@ -33,6 +33,7 @@ public class UserDaoTest {
     public void get() throws SQLException, ClassNotFoundException {
     	String id = "1";
         User user = userDao.getUserInfo(id);
+        System.out.println("---------------------"+user.getId());
         assertEquals(id, user.getId());
     }
 

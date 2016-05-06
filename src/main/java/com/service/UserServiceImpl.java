@@ -19,9 +19,8 @@ public class UserServiceImpl implements UserService {
 	
 	@Override
 	public User userInfo(String userNum){
-		
+		System.out.println("userService id : ----------------------------------------"+userNum+"--------------------------------------");
 		try {
-			System.out.println("userService id : ----------------------------------------"+userNum+"--------------------------------------");
 			return userDao.getUserInfo(userNum);
 		} catch (ClassNotFoundException e) {
 			e.printStackTrace();
