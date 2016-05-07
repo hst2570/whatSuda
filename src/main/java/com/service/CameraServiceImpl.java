@@ -1,14 +1,11 @@
 package com.service;
 
-import java.io.DataOutputStream;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
-import java.net.URLConnection;
 import java.sql.SQLException;
-
-import org.junit.Before;
-import org.springframework.context.ApplicationContext;
-import org.springframework.context.support.GenericXmlApplicationContext;
 
 import com.dao.CameraDao;
 import com.domain.Camera;
@@ -21,43 +18,14 @@ public class CameraServiceImpl implements CameraService {
 	}
 	
 	@Override
-	public void startCamera(int userid, int beaconid) {
-		try {
-			Camera camera = cameraDao.get(beaconid);
-						
-			String encoded = null;
-	        DataOutputStream  out = null;
-	        try{
-	            URL url = new URL(camera.getDomain()+"?userid="+userid);
-	            URLConnection conn = url.openConnection();
-	            HttpURLConnection hurlc = (HttpURLConnection) conn;
-	            // 헤더값을 설정한다.
-//	            hurlc.setRequestProperty(키, 값);
-//	            hurlc.setRequestMethod("get");
-	            hurlc.setDoOutput(true);
-	            hurlc.setDoInput(true);
-	            hurlc.setUseCaches(false);
-	            hurlc.setDefaultUseCaches(false);
-//	            encoded = ;
-	            out = new DataOutputStream(conn.getOutputStream());
-//	            out.writeBytes(encoded);
-	            out.flush();
-	            
-	        }catch(Exception e){
-	            e.printStackTrace();
-	        }finally{
-	            try{
-	                out.close();
-	            }catch(Exception e){}
-	        }
-	        
-		} catch (ClassNotFoundException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		} catch (SQLException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+	public Camera startCamera(int userid, int beaconid) throws IOException, ClassNotFoundException, SQLException {
+		Camera camera = cameraDao.get(beaconid);
+		
+        URL url = new URL(camera.getDomain());
+        HttpURLConnection con = (HttpURLConnection) url.openConnection();
+        
+        con.setRequestMethod("GET");
+        return camera;
 	}
 
 	@Override
@@ -67,10 +35,9 @@ public class CameraServiceImpl implements CameraService {
 	}
 	
 	//임시 도메인 셋팅메소드
-	public Camera setCameraDomain(String domain, int cameraId, int beaconId) throws SQLException{
-		Camera camera = cameraDao.setCamera(domain, cameraId, beaconId);
-		
-		return camera;
+	public Camera setCameraDomain(String domain, int cameraId, int beaconId) throws SQLException, ClassNotFoundException{
+		cameraDao.setCamera(domain, cameraId, beaconId);
+		return cameraDao.get(beaconId);
 	}
 
 }

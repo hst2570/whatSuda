@@ -3,6 +3,7 @@ package com.example;
 import static org.junit.Assert.assertEquals;
 
 import java.io.DataOutputStream;
+import java.io.IOException;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.net.URLConnection;
@@ -34,14 +35,13 @@ public class CameraDaoTest {
     }
     
     @Test
-    public void connecCamera() throws SQLException, ClassNotFoundException {
+    public void connecCamera() throws SQLException, ClassNotFoundException, IOException {
     	int id = 1;
         Camera camera = cameraDao.get(id);
         
-        String encoded = null;
+//        String encoded = null;
         DataOutputStream  out = null;
-        try{
-            URL url = new URL(camera.getDomain());
+        URL url = new URL("http://117.17.102.158:8000/cameraShot");
             URLConnection conn = url.openConnection();
             HttpURLConnection hurlc = (HttpURLConnection) conn;
             // 헤더값을 설정한다.
@@ -56,13 +56,6 @@ public class CameraDaoTest {
 //            out.writeBytes(encoded);
             out.flush();
             
-        }catch(Exception e){
-            e.printStackTrace();
-        }finally{
-            try{
-                out.close();
-            }catch(Exception e){}
-        }
         
         assertEquals(id, camera.getBeaconid());
     }

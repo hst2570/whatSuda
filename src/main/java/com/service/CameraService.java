@@ -1,5 +1,6 @@
 package com.service;
 
+import java.io.IOException;
 import java.sql.SQLException;
 
 import com.domain.Camera;
@@ -10,7 +11,7 @@ public interface CameraService {
 	 * 2. 사진이 찍힌후, 카메라에서 오는 유저아이디와 경로 저장
 	 */
 	
-	public void startCamera(int userId, int beaconid);
+	public Camera startCamera(int userId, int beaconid) throws IOException, ClassNotFoundException, SQLException;
 	public void savePhoto(Long userId, String photoPath);
-	public Camera setCameraDomain(String domain, int cameraId, int beaconId) throws SQLException;
+	public Camera setCameraDomain(String domain, int cameraId, int beaconId) throws SQLException, ClassNotFoundException;
 }
