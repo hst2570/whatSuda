@@ -19,7 +19,7 @@ public interface UserService {
 	
 //	public void photoEvent(String beaconNum);
 	
-	public String signUp(User user);
+	public User add(String id) throws SQLException;
 
 	
 }

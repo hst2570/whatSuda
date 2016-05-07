@@ -23,25 +23,25 @@ public class CameraServiceTest {
     }
 	
 //	@RequestMapping("/camera/start/{userid}/{beaconid}")
-	@Test
-    public void startCamera() throws ClassNotFoundException, IOException, SQLException {
-		int userid = 3;
-		int beaconid = 3;
-        cameraService.startCamera(userid, beaconid);
-    }
-	
 //	@Test
-//	public void setCamera() throws SQLException, ClassNotFoundException{
-//		int cameraid = 3;
+//    public void startCamera() throws ClassNotFoundException, IOException, SQLException {
+//		int userid = 3;
 //		int beaconid = 3;
-//		String domain = "http://117.17.102.158:8000/cameraShot";
-//		
-//		Camera camera = cameraService.setCameraDomain(domain, cameraid, beaconid);
-//		
-//		assertEquals(cameraid, camera.getCameraid());
-//		assertEquals(beaconid, camera.getBeaconid());
-//		assertEquals(domain, camera.getDomain());
-//	}
+//        cameraService.startCamera(userid, beaconid);
+//    }
+	
+	@Test
+	public void setCamera() throws SQLException, ClassNotFoundException{
+		int cameraid = 5;
+		int beaconid = 5;
+		String domain = "test";
+		
+		Camera camera = cameraService.setCameraDomain(domain, cameraid, beaconid);
+		
+		assertEquals(cameraid, camera.getCameraid());
+		assertEquals(beaconid, camera.getBeaconid());
+		assertEquals(domain, camera.getDomain());
+	}
 	
 //	public void savePhoto(){
 ////		cameraService.savePhoto(userId, photoPath);

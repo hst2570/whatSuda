@@ -36,8 +36,7 @@ public class CameraServiceImpl implements CameraService {
 	
 	//임시 도메인 셋팅메소드
 	public Camera setCameraDomain(String domain, int cameraId, int beaconId) throws SQLException, ClassNotFoundException{
-		cameraDao.setCamera(domain, cameraId, beaconId);
-		return cameraDao.get(beaconId);
+		return cameraDao.setCamera(domain, cameraId, beaconId);
 	}
 
 }

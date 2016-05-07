@@ -23,7 +23,9 @@ public class UserServiceImpl implements UserService {
 	}
 	
 	@Override
-	public String signUp(User user){
+	public User add(String id) throws SQLException{
+		User user = new User();
+		user.setId(id);
 		return userDao.add(user);
 	}
 }

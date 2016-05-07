@@ -33,31 +33,4 @@ public class CameraDaoTest {
         Camera camera = cameraDao.get(id);
         assertEquals(id, camera.getBeaconid());
     }
-    
-    @Test
-    public void connecCamera() throws SQLException, ClassNotFoundException, IOException {
-    	int id = 1;
-        Camera camera = cameraDao.get(id);
-        
-//        String encoded = null;
-        DataOutputStream  out = null;
-        URL url = new URL("http://117.17.102.158:8000/cameraShot");
-            URLConnection conn = url.openConnection();
-            HttpURLConnection hurlc = (HttpURLConnection) conn;
-            // 헤더값을 설정한다.
-//            hurlc.setRequestProperty(키, 값);
-//            hurlc.setRequestMethod("get");
-            hurlc.setDoOutput(true);
-            hurlc.setDoInput(true);
-            hurlc.setUseCaches(false);
-            hurlc.setDefaultUseCaches(false);
-//            encoded = ;
-            out = new DataOutputStream(conn.getOutputStream());
-//            out.writeBytes(encoded);
-            out.flush();
-            
-        
-        assertEquals(id, camera.getBeaconid());
-    }
-
 }

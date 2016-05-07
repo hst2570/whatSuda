@@ -23,19 +23,16 @@ public class UserDao {
 	}
 
 	public User getUserInfo(String id) throws SQLException {
-		int ids = Integer.parseInt(id);
 		System.out.println("userDao id : ----------------------------------------"+id+"--------------------------------------");
-		Connection connection;
-		User user = new User();
-		connection = dataSource.getConnection();
+		
+		Connection connection = dataSource.getConnection();
 		PreparedStatement preparedStatement = connection.prepareStatement("select * from user where id = ?");
-        preparedStatement.setInt(1, ids);
+        preparedStatement.setString(1, id);
         
         ResultSet resultSet = preparedStatement.executeQuery();
         resultSet.next();
         
-        
-        
+        User user = new User();
         user.setId(resultSet.getString("id"));
         
         resultSet.close();
@@ -45,9 +42,24 @@ public class UserDao {
 		return user;
 	}
 
-	public String add(User user) {
-		// TODO Auto-generated method stub
-		return null;
+	public User add(User user) throws SQLException {
+		Connection connection = dataSource.getConnection();
+		PreparedStatement preparedStatement = connection.prepareStatement("insert into user values(?)");
+        preparedStatement.setString(1, user.getId());
+        
+        preparedStatement.executeUpdate();
+        
+        PreparedStatement preparedStatement2 = connection.prepareStatement("select last_insert_id()");
+
+        ResultSet resultSet = preparedStatement2.executeQuery();
+        resultSet.next();
+
+        resultSet.close();
+        preparedStatement2.close();
+        preparedStatement.close();
+        connection.close();
+        
+        return getUserInfo(user.getId());
 	}
 
 	public void update(User user) {

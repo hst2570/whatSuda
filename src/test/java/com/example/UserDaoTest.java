@@ -37,14 +37,16 @@ public class UserDaoTest {
         assertEquals(id, user.getId());
     }
 
-//    @Test
-//    public void add() throws SQLException, ClassNotFoundException {
-//    	String id = "2";
-//        
-//        User resultSet = userDao.getUserInfo(id);
-//
-//        assertEquals(id, resultSet.getId());
-//    }
+    @Test
+    public void add() throws SQLException, ClassNotFoundException {
+    	User user = new User();
+    	
+    	user.setId("3");
+        
+        User resultSet = userDao.add(user);
+
+        assertEquals("3", resultSet.getId());
+    }
 //
 //    @Test
 //    public void delete() throws SQLException, ClassNotFoundException {
