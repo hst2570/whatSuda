@@ -1,9 +1,9 @@
-package com.service;
+package com.example.service;
 
 import java.io.IOException;
 import java.sql.SQLException;
 
-import com.domain.Camera;
+import com.example.domain.Camera;
 
 public interface CameraService {
 	/*	서버 <-> 카메라 서비스

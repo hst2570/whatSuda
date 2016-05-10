@@ -9,8 +9,8 @@ import org.junit.Test;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.GenericXmlApplicationContext;
 
-import com.dao.UserDao;
-import com.domain.User;
+import com.example.dao.UserDao;
+import com.example.domain.User;
 
 public class UserDaoTest {
 	

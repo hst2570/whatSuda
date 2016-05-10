@@ -1,12 +1,12 @@
-package com.service;
+package com.example.service;
 
 import java.sql.SQLException;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.dao.UserDao;
-import com.domain.User;
+import com.example.dao.UserDao;
+import com.example.domain.User;
 
 @Service
 public class UserServiceImpl implements UserService {

@@ -1,11 +1,11 @@
-package com.service;
+package com.example.service;
 
 import java.sql.SQLException;
 
 import org.springframework.ui.Model;
 
-import com.dao.UserDao;
-import com.domain.User;
+import com.example.dao.UserDao;
+import com.example.domain.User;
 
 public interface UserService {
 	/*	앱 <->서버 서비스

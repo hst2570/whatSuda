@@ -1,4 +1,4 @@
-package com.controller;
+package com.example.controller;
 
 import java.sql.SQLException;
 
@@ -13,8 +13,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import com.domain.User;
-import com.service.UserService;
+import com.example.domain.User;
+import com.example.service.UserService;
 
 @ContextConfiguration("classpath:/daoFactory.xml")
 @Controller

@@ -1,4 +1,4 @@
-package com.service;
+package com.example.service;
 
 public class LocationServiceImpl {
 

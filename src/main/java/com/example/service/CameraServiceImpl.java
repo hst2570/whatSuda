@@ -1,4 +1,4 @@
-package com.service;
+package com.example.service;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -7,8 +7,8 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 import java.sql.SQLException;
 
-import com.dao.CameraDao;
-import com.domain.Camera;
+import com.example.dao.CameraDao;
+import com.example.domain.Camera;
 
 public class CameraServiceImpl implements CameraService {
 	private CameraDao cameraDao;

@@ -11,8 +11,8 @@ import org.springframework.context.support.GenericXmlApplicationContext;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import com.domain.User;
-import com.service.UserService;
+import com.example.domain.User;
+import com.example.service.UserService;
 
 public class UserServiceTest {
 private UserService userService;

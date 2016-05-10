@@ -14,8 +14,8 @@ import org.junit.Test;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.GenericXmlApplicationContext;
 
-import com.dao.CameraDao;
-import com.domain.Camera;
+import com.example.dao.CameraDao;
+import com.example.domain.Camera;
 
 public class CameraDaoTest {
 	private CameraDao cameraDao;

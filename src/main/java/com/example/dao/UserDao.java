@@ -1,4 +1,4 @@
-package com.dao;
+package com.example.dao;
 
 import java.io.PrintWriter;
 import java.sql.Connection;
@@ -13,7 +13,7 @@ import javax.sql.DataSource;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 
-import com.domain.User;
+import com.example.domain.User;
 
 public class UserDao {
 	private DataSource dataSource;

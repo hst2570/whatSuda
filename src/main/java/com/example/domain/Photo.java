@@ -1,4 +1,4 @@
-package com.domain;
+package com.example.domain;
 
 public class Photo {
 

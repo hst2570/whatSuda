@@ -1,4 +1,4 @@
-package com.controller;
+package com.example.controller;
 
 import java.io.IOException;
 import java.sql.SQLException;
@@ -12,8 +12,8 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import com.domain.Camera;
-import com.service.CameraService;
+import com.example.domain.Camera;
+import com.example.service.CameraService;
 
 @ContextConfiguration("classpath:/daoFactory.xml")
 @Controller

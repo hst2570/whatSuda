@@ -1,4 +1,4 @@
-package com.dao;
+package com.example.dao;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -7,7 +7,7 @@ import java.sql.SQLException;
 
 import javax.sql.DataSource;
 
-import com.domain.Camera;
+import com.example.domain.Camera;
 
 public class CameraDao {
 	private DataSource dataSource;
