@@ -8,11 +8,6 @@ import org.springframework.boot.context.web.SpringBootServletInitializer;
 @SpringBootApplication
 public class CapstonApplication extends SpringBootServletInitializer {
 	
-	@Override
-	protected SpringApplicationBuilder configure(SpringApplicationBuilder application) {
-		return application.sources(CapstonApplication.class);
-	}
-	
 	public static void main(String[] args) {
 		SpringApplication.run(CapstonApplication.class, args);
 	}
