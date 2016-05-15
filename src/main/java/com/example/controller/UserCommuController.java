@@ -18,6 +18,7 @@ import com.example.service.UserService;
 
 @ContextConfiguration("classpath:/daoFactory.xml")
 @Controller
+@RequestMapping("/user")
 public class UserCommuController {
 	private UserService userService;
 	
@@ -27,13 +28,13 @@ public class UserCommuController {
         userService = (UserService) applicationContext.getBean("userService");
     }
 	
-	@RequestMapping(value = "/user/info/{id}", method = RequestMethod.GET)
+	@RequestMapping("/info/{id}")
     public @ResponseBody User userInfo(@PathVariable String id) throws SQLException, ClassNotFoundException  {
 		User user = userService.userInfo(id);
 		return user;
     }
 	
-	@RequestMapping(value = "/user/add/{id}", method = RequestMethod.GET)
+	@RequestMapping("/add/{id}")
     public @ResponseBody User userAdd(@PathVariable String id) throws SQLException, ClassNotFoundException  {
 		User user = userService.add(id);
 		return user;

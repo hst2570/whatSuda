@@ -21,7 +21,7 @@ public class CameraServiceImpl implements CameraService {
 	public Camera startCamera(int userid, int beaconid) throws IOException, ClassNotFoundException, SQLException {
 		Camera camera = cameraDao.get(beaconid);
 		
-        URL url = new URL(camera.getDomain());
+        URL url = new URL(camera.getDomain()+"?userid="+userid);
         HttpURLConnection con = (HttpURLConnection) url.openConnection();
         
         con.setRequestMethod("GET");

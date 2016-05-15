@@ -11,8 +11,9 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import com.example.domain.User;
 
 @Controller
+@RequestMapping("/")
 public class HomeController {
-	@RequestMapping("/")
+	
     public String index(){
 		return "index";
     }
