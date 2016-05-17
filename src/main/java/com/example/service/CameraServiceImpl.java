@@ -22,9 +22,16 @@ public class CameraServiceImpl implements CameraService {
 		Camera camera = cameraDao.get(beaconid);
 		
         URL url = new URL(camera.getDomain()+"?userid="+userid);
+        System.out.println(url);
         HttpURLConnection con = (HttpURLConnection) url.openConnection();
         
-        con.setRequestMethod("GET");
+        if(con.getResponseCode() == 404){
+        	camera.setDomain(null);
+        	camera.setBeaconid(0);
+        	camera.setCameraid(0);
+        	return camera;
+        }
+       
         return camera;
 	}
 
