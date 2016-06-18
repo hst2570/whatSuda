@@ -2,7 +2,6 @@ package com.example;
 
 import static org.junit.Assert.assertEquals;
 
-import java.io.IOException;
 import java.sql.SQLException;
 
 import org.junit.Before;
@@ -10,7 +9,7 @@ import org.junit.Test;
 import org.springframework.context.support.AbstractApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
-import com.example.domain.Camera;
+import com.example.model.Camera;
 import com.example.service.CameraService;
 
 public class CameraServiceTest {

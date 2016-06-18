@@ -2,7 +2,9 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/capston.iml" filepath="$PROJECT_DIR$/capston.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/whatsuda.iml" filepath="$PROJECT_DIR$/.idea/modules/whatsuda.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/whatsuda_main.iml" filepath="$PROJECT_DIR$/.idea/modules/whatsuda_main.iml" group="whatsuda" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/whatsuda_test.iml" filepath="$PROJECT_DIR$/.idea/modules/whatsuda_test.iml" group="whatsuda" />
     </modules>
   </component>
 </project>

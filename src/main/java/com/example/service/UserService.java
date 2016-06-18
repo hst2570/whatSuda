@@ -1,11 +1,8 @@
 package com.example.service;
 
+import com.example.model.User;
+
 import java.sql.SQLException;
-
-import org.springframework.ui.Model;
-
-import com.example.dao.UserDao;
-import com.example.domain.User;
 
 public interface UserService {
 	/*	앱 <->서버 서비스
@@ -15,7 +12,7 @@ public interface UserService {
 	 * 4. 사진 촬영 이벤트
 	 */
 	
-	public User userInfo(String userNum) throws ClassNotFoundException, SQLException;
+	public User userInfo(String id) throws ClassNotFoundException, SQLException;
 	
 //	public void photoEvent(String beaconNum);
 	

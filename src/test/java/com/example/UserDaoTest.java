@@ -10,7 +10,7 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.GenericXmlApplicationContext;
 
 import com.example.dao.UserDao;
-import com.example.domain.User;
+import com.example.model.User;
 
 public class UserDaoTest {
 	

@@ -8,10 +8,8 @@ import org.junit.Before;
 import org.junit.Test;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.GenericXmlApplicationContext;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.ResponseBody;
 
-import com.example.domain.User;
+import com.example.model.User;
 import com.example.service.UserService;
 
 public class UserServiceTest {

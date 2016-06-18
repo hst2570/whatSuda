@@ -3,7 +3,7 @@ package com.example.service;
 import java.io.IOException;
 import java.sql.SQLException;
 
-import com.example.domain.Camera;
+import com.example.model.Camera;
 
 public interface CameraService {
 	/*	서버 <-> 카메라 서비스
