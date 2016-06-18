@@ -3,7 +3,6 @@ package com.example.controller;
 import com.example.model.Camera;
 import com.example.service.CameraService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpRequest;
 import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletRequest;

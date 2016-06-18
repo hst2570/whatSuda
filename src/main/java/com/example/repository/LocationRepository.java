@@ -1,7 +1,13 @@
 package com.example.repository;
 
+import com.example.model.Location;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
+
 /**
  * Created by User on 2016-06-18.
  */
-public class LocationRepository {
+@Repository
+public interface LocationRepository extends JpaRepository<Location, String> {
+
 }

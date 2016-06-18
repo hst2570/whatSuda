@@ -7,8 +7,8 @@ import javax.persistence.Id;
 public class Location {
 
     @Id
-    private String userId;
     private String beaconid;
+    private String userId;
     private String date;
 
     public String getUserId() {

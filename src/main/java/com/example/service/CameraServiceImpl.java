@@ -25,7 +25,7 @@ public class CameraServiceImpl implements CameraService {
 
         HttpURLConnection urlConnection = (HttpURLConnection) url.openConnection();
 
-        if (urlConnection.getResponseCode() == 404) {
+        if (urlConnection.getResponseCode() == 404) { // 해당 카메라에 접속이 안되면 모든 값을 null로 변경.
             camera.setDomain(null);
             camera.setBeaconid(null);
             camera.setCameraid(null);
@@ -36,7 +36,11 @@ public class CameraServiceImpl implements CameraService {
 
     @Override
     public void savePhoto(Long userId, String photoPath) {
-
+        /*
+            - 특정 URL로 파일이 저장되게.
+            - 파일은 POST로 받는다.
+            - image인지 아닌지
+         */
     }
 
     @Override
