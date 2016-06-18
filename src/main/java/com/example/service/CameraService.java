@@ -1,9 +1,10 @@
 package com.example.service;
 
+import com.example.model.Camera;
+
+import javax.servlet.http.HttpServletRequest;
 import java.io.IOException;
 import java.sql.SQLException;
-
-import com.example.model.Camera;
 
 public interface CameraService {
 	/*	서버 <-> 카메라 서비스
@@ -13,5 +14,5 @@ public interface CameraService {
 	
 	public Camera startCamera(int userId, int beaconid) throws IOException, ClassNotFoundException, SQLException;
 	public void savePhoto(Long userId, String photoPath);
-	public Camera setCameraDomain(String domain, int cameraId, int beaconId) throws SQLException, ClassNotFoundException;
+	public Camera setCameraDomain(HttpServletRequest request) throws SQLException, ClassNotFoundException;
 }

@@ -3,8 +3,10 @@ package com.example.controller;
 import com.example.model.Camera;
 import com.example.service.CameraService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpRequest;
 import org.springframework.web.bind.annotation.*;
 
+import javax.servlet.http.HttpServletRequest;
 import java.io.IOException;
 import java.sql.SQLException;
 
@@ -19,9 +21,9 @@ public class CameraCommuContoller {
         return cameraService.startCamera(userid, beaconid);
     }
 
-    @RequestMapping(value = "/camera/set/{cameraid}/{beaconid}", method = RequestMethod.GET)
-    public @ResponseBody Camera setCamera(@RequestParam("domain") String domain, @PathVariable int cameraid, @PathVariable int beaconid) throws SQLException, ClassNotFoundException {
-        return cameraService.setCameraDomain(domain, cameraid, beaconid);
+    @RequestMapping(value = "/camera/set", method = RequestMethod.GET)
+    public @ResponseBody Camera setCamera(HttpServletRequest request) throws SQLException, ClassNotFoundException {
+        return cameraService.setCameraDomain(request);
     }
 
     @RequestMapping(value = "/camera/download", method = RequestMethod.GET)

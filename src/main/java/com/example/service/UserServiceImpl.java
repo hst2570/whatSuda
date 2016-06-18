@@ -20,6 +20,8 @@ public class UserServiceImpl implements UserService {
 
 	@Override
 	public User add(String id) throws SQLException {
-		return null;
+		User user = new User();
+		user.setId(id);
+		return userRepository.save(user);
 	}
 }

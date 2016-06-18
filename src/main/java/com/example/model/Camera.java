@@ -7,18 +7,9 @@ import javax.persistence.Id;
 public class Camera {
 
     @Id
-    private int id;
+    private int beaconid;
     private String domain;
     private int Cameraid;
-    private int beaconid;
-
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
 
     public String getDomain() {
         return domain;
@@ -32,7 +23,7 @@ public class Camera {
         return Cameraid;
     }
 
-    public void setCameraid(int cameraid) {
+    public void setCameraid(String cameraid) {
         Cameraid = cameraid;
     }
 
@@ -40,7 +31,8 @@ public class Camera {
         return beaconid;
     }
 
-    public void setBeaconid(int beaconid) {
+    public void setBeaconid(String beaconid) {
         this.beaconid = beaconid;
     }
+
 }
