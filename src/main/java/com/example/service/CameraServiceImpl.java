@@ -18,7 +18,7 @@ public class CameraServiceImpl implements CameraService {
     private CameraRepository cameraRepository;
 
     @Override
-    public Camera startCamera(int userId, int beaconid) throws IOException, ClassNotFoundException, SQLException {
+    public Camera startCamera(String userId, String beaconid) throws IOException, ClassNotFoundException, SQLException {
         Camera camera = cameraRepository.findOne(beaconid);
 
         URL url = new URL(camera.getDomain() + "?userid=" + userId);
@@ -28,7 +28,6 @@ public class CameraServiceImpl implements CameraService {
         if (urlConnection.getResponseCode() == 404) { // 해당 카메라에 접속이 안되면 모든 값을 null로 변경.
             camera.setDomain(null);
             camera.setBeaconid(null);
-            camera.setCameraid(null);
         }
 
         return camera;
@@ -47,7 +46,6 @@ public class CameraServiceImpl implements CameraService {
     public Camera setCameraDomain(HttpServletRequest request) throws SQLException, ClassNotFoundException {
         Camera camera = new Camera();
         camera.setBeaconid(request.getParameter("beaconid"));
-        camera.setCameraid(request.getParameter("cameraid"));
         camera.setDomain(request.getParameter("domain"));
 
         return cameraRepository.save(camera);

@@ -2,6 +2,7 @@ package com.example.model;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import java.util.Date;
 
 @Entity
 public class Location {
@@ -9,7 +10,7 @@ public class Location {
     @Id
     private String beaconid;
     private String userId;
-    private String date;
+    private Date date;
 
     public String getUserId() {
         return userId;
@@ -27,13 +28,11 @@ public class Location {
         this.beaconid = beaconid;
     }
 
-    public String getDate() {
+    public Date getDate() {
         return date;
     }
 
-    public void setDate(String date) {
+    public void setDate(Date date) {
         this.date = date;
     }
-
-
 }

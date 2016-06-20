@@ -1,13 +1,13 @@
 package com.example.repository;
 
-import com.example.model.Camera;
+import com.example.model.Story;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 /**
- * Created by User on 2016-06-18.
+ * Created by User on 2016-06-21.
  */
 @Repository
-public interface CameraRepository extends JpaRepository<Camera, String> {
+public interface StoryRepository extends JpaRepository<Story, String> {
 
 }

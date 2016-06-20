@@ -12,7 +12,7 @@ public interface CameraService {
 	 * 2. 사진이 찍힌후, 카메라에서 오는 유저아이디와 경로 저장
 	 */
 	
-	public Camera startCamera(int userId, int beaconid) throws IOException, ClassNotFoundException, SQLException;
+	public Camera startCamera(String userId, String beaconid) throws IOException, ClassNotFoundException, SQLException;
 	public void savePhoto(Long userId, String photoPath);
 	public Camera setCameraDomain(HttpServletRequest request) throws SQLException, ClassNotFoundException;
 }

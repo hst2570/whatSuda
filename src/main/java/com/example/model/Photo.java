@@ -2,13 +2,14 @@ package com.example.model;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import java.util.Date;
 
 @Entity
 public class Photo {
     @Id
     private String userId;
     private String path;
-    private String date;
+    private Date date;
 
     public String getUserId() {
         return userId;
@@ -26,12 +27,11 @@ public class Photo {
         this.path = path;
     }
 
-    public String getDate() {
+    public Date getDate() {
         return date;
     }
 
-    public void setDate(String date) {
+    public void setDate(Date date) {
         this.date = date;
     }
-
 }

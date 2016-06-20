@@ -3,20 +3,14 @@ package com.example.model;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 
+/**
+ * Created by User on 2016-06-21.
+ */
 @Entity
-public class Camera {
-
+public class Story {
     @Id
     private String beaconid;
-    private String domain;
-
-    public String getDomain() {
-        return domain;
-    }
-
-    public void setDomain(String domain) {
-        this.domain = domain;
-    }
+    private String content;
 
     public String getBeaconid() {
         return beaconid;
@@ -24,5 +18,13 @@ public class Camera {
 
     public void setBeaconid(String beaconid) {
         this.beaconid = beaconid;
+    }
+
+    public String getContent() {
+        return content;
+    }
+
+    public void setContent(String content) {
+        this.content = content;
     }
 }
