@@ -63,10 +63,10 @@ public class AppController {
         return null;
     }
 
-    @RequestMapping(value = "/photo/{userid}", method = RequestMethod.GET)
-    public List<Photo> getPhoto(@PathVariable String userid){
-        return photoRepository.findByUserid(userid);
-    }
+//    @RequestMapping(value = "/photo/{userid}", method = RequestMethod.GET)
+//    public List<Photo> getPhoto(@PathVariable String userid){
+//        return photoRepository.findByUserid(userid);
+//    }
 
     @RequestMapping(value = "/path/{userid}", method = RequestMethod.GET)
     public List<RecommendedRoute> route(@PathVariable String userid){
