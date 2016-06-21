@@ -1,15 +1,13 @@
 package com.example.model;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
+import javax.persistence.*;
 import java.util.Date;
 
 @Entity
 public class Location {
 
     @Id
+    @GeneratedValue(strategy=GenerationType.IDENTITY)
     private String locationid;
     @JoinColumn(name = "beaconid")
     @ManyToOne

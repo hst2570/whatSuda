@@ -2,12 +2,13 @@ package com.example.model;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import java.io.Serializable;
 
 /**
  * Created by User on 2016-06-21.
  */
 @Entity
-public class Beacon {
+public class Beacon implements Serializable {
     @Id
     private String beaconid;
     private int type; // 1, 2, 3으로 나뉨. 1 파파라치, 2 스토리, 3 경로 저장

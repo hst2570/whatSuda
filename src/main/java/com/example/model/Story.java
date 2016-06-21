@@ -11,20 +11,10 @@ import javax.persistence.ManyToOne;
 @Entity
 public class Story {
     @Id
-    private  String storyid;
-
     @JoinColumn(name = "beaconid")
     @ManyToOne
     private Beacon beaconid;
     private String content;
-
-    public String getStoryid() {
-        return storyid;
-    }
-
-    public void setStoryid(String storyid) {
-        this.storyid = storyid;
-    }
 
     public Beacon getBeaconid() {
         return beaconid;
