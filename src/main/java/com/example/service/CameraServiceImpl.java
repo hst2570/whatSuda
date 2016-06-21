@@ -44,10 +44,15 @@ public class CameraServiceImpl implements CameraService {
 
     @Override
     public Camera setCameraDomain(HttpServletRequest request) throws SQLException, ClassNotFoundException {
-        Camera camera = new Camera();
-        camera.setBeaconid(request.getParameter("beaconid"));
-        camera.setDomain(request.getParameter("domain"));
-
-        return cameraRepository.save(camera);
+        return null;
     }
+
+//    @Override
+//    public Camera setCameraDomain(HttpServletRequest request) throws SQLException, ClassNotFoundException {
+//        Camera camera = new Camera();
+//        camera.setBeaconid(request.getParameter("beaconid"));
+//        camera.setDomain(request.getParameter("domain"));
+//
+//        return cameraRepository.save(camera);
+//    }
 }

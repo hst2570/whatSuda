@@ -11,7 +11,7 @@ public class Photo {
     @Id
     @GeneratedValue(strategy= GenerationType.IDENTITY)
     private String photoid;
-    private String userId;
+    private String userid;
     private String path;
     private Date date;
 
@@ -23,12 +23,12 @@ public class Photo {
         this.photoid = photoid;
     }
 
-    public String getUserId() {
-        return userId;
+    public String getUserid() {
+        return userid;
     }
 
-    public void setUserId(String userId) {
-        this.userId = userId;
+    public void setUserid(String userid) {
+        this.userid = userid;
     }
 
     public String getPath() {

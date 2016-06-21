@@ -50,7 +50,7 @@ public class AppController {
         if(beacon.getType() == 1){
             return cameraService.startCamera(userid, beacon.getBeaconid());
         }else if(beacon.getType() == 2){
-            return storyRepository.findOne(beacon);
+            return storyRepository.findByBeacon(beacon);
         }else if(beacon.getType() == 3){
             Location location = new Location();
             Date date = new Date();
