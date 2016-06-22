@@ -68,8 +68,10 @@ public class AppController {
         return photoRepository.findByUserid(userid);
     }
 
-    @RequestMapping(value = "/path/{userid}", method = RequestMethod.GET)
+    @RequestMapping(value = "/path/{userid}")
     public List<RecommendedRoute> route(@PathVariable String userid){
+        System.out.println( recommendedRouteRepository.findByUserid(userid).get(0).getBeacon().getLocation());
+
         return recommendedRouteRepository.findByUserid(userid);
     }
 

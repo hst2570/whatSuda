@@ -15,8 +15,13 @@ import javax.servlet.http.HttpServletRequest;
 @Controller
 public class CameraController {
 
-    @RequestMapping(value = "/photo/save", method = RequestMethod.POST)
-    public void savePhoto(HttpServletRequest request, @RequestParam("photo") MultipartFile photo){
-        //받은 사진을 저장한다. 어디로?
-    }
+//    @RequestMapping(value = "/photo/save", method = RequestMethod.POST)
+//    public void savePhoto(HttpServletRequest request, @RequestParam("photo") MultipartFile photo){
+//        //받은 사진을 저장한다. 어디로?
+//    }
+    /*
+
+        camera에서 로컬 저장으로 구현,
+
+     */
 }

@@ -8,6 +8,6 @@ import org.springframework.stereotype.Repository;
  * Created by User on 2016-06-18.
  */
 @Repository
-public interface LocationRepository extends JpaRepository<Location, String> {
+public interface LocationRepository extends JpaRepository<Location, Long> {
 
 }

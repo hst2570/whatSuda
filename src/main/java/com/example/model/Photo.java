@@ -10,16 +10,16 @@ import java.util.Date;
 public class Photo {
     @Id
     @GeneratedValue(strategy= GenerationType.IDENTITY)
-    private String photoid;
+    private Long photoid;
     private String userid;
     private String path;
     private Date date;
 
-    public String getPhotoid() {
+    public Long getPhotoid() {
         return photoid;
     }
 
-    public void setPhotoid(String photoid) {
+    public void setPhotoid(Long photoid) {
         this.photoid = photoid;
     }
 
