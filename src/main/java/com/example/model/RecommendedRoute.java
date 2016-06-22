@@ -1,7 +1,6 @@
 package com.example.model;
 
 import javax.persistence.*;
-import java.util.Date;
 
 /**
  * Created by User on 2016-06-21.
@@ -10,18 +9,18 @@ import java.util.Date;
 public class RecommendedRoute {
     @Id
     @GeneratedValue(strategy=GenerationType.IDENTITY)
-    private String id;
+    private Long routeid;
     private String userid;
     @JoinColumn(name = "beaconid")
     @ManyToOne
     private Beacon beacon; //추천된 비콘
 
-    public String getId() {
-        return id;
+    public Long getRouteid() {
+        return routeid;
     }
 
-    public void setId(String id) {
-        this.id = id;
+    public void setRouteid(Long routeid) {
+        this.routeid = routeid;
     }
 
     public String getUserid() {

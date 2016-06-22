@@ -10,8 +10,9 @@ import java.util.List;
 /**
  * Created by User on 2016-06-18.
  */
-//@Repository
-public interface PhotoRepository extends JpaRepository<Photo, String> {
 
-//    List<Photo> findByUserid(String userid);
+@Repository
+public interface PhotoRepository extends JpaRepository<Photo, Long> {
+
+    List<Photo> findByUserid(String userid);
 }

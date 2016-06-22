@@ -8,18 +8,18 @@ public class Location {
 
     @Id
     @GeneratedValue(strategy=GenerationType.IDENTITY)
-    private String locationid;
+    private Long locationid;
     @JoinColumn(name = "beaconid")
     @ManyToOne
     private Beacon beaconid;
     private String userId;
     private Date date;
 
-    public String getLocationid() {
+    public Long getLocationid() {
         return locationid;
     }
 
-    public void setLocationid(String locationid) {
+    public void setLocationid(Long locationid) {
         this.locationid = locationid;
     }
 

@@ -10,7 +10,7 @@ import java.util.List;
  * Created by User on 2016-06-21.
  */
 @Repository
-public interface RecommendedRouteRepository extends JpaRepository<RecommendedRoute, String> {
+public interface RecommendedRouteRepository extends JpaRepository<RecommendedRoute, Long> {
 
     List<RecommendedRoute> findByUserid(String userid);
 }
