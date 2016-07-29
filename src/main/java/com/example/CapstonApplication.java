@@ -20,17 +20,6 @@ public class CapstonApplication extends WebMvcConfigurerAdapter {
 		SpringApplication.run(CapstonApplication.class, args);
 	}
 
-//	@Override
-//	public void addResourceHandlers(ResourceHandlerRegistry registry) {
-//		if (!registry.hasMappingForPattern("/static/**")) {
-//			registry.addResourceHandler("/static/**").addResourceLocations("classpath:/static/");
-//		}
-//
-//		if (!registry.hasMappingForPattern("/image/**")) {
-//			registry.addResourceHandler("/image/**").addResourceLocations("classpath:/image/");
-//		}
-//	}
-
 	@Bean
 	public HttpMessageConverter<String> responseBodyConverter() {
 		//결과 출력시 강제로 utf-8로 설정
@@ -44,4 +33,18 @@ public class CapstonApplication extends WebMvcConfigurerAdapter {
 		characterEncodingFilter.setForceEncoding(true);
 		return characterEncodingFilter;
 	}
+
+	/*
+		기능 정의
+		 - 카메라
+		  * 사진촬영
+		  * 사진저장
+
+		 - 안드로이드
+		  * 스토리텔링
+		  * 경로저장
+		  * 경로추천
+		  * 사진경로
+		  * 유저정보
+	 */
 }
